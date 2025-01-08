@@ -22,14 +22,19 @@ public class Card {
 
   public CardType Type;
   public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).length];
-  public int[] Investors;
+  public int Investors;
+  public int Level;
   public Currency Bonus;
 
-  public Card(CardType type, int[] requirements, int investors, Currency bonus = Currency.Money) {
+  public Card(CardType type, int[] requirements, int investors, int level, Currency bonus = Currency.Money) {
+
+    private bool isMine = (type == CardType.Mine);
+    
     Type = type;
     Requirements = requirements;
     Investors = investors;
-    Bonus = (type == CardType.Mine) ? bonus : Currency.Money;
+    Level = isMine ? level : 4;
+    Bonus = isMine ? bonus : Currency.Money;
   }
   
 }
