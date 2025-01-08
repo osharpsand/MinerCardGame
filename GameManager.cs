@@ -76,7 +76,7 @@ class CardDeck : Stack<Card>
   }
 }
 
-class gameManager : MonoBehaviour {
+class GameManager : MonoBehaviour {
 
   public CardDeck deck;
   public string[] playerNames;
