@@ -90,6 +90,7 @@ class GameManager : MonoBehaviour {
       Card[] cardsArray = JsonSerializer.Deserialize<Card[]>(jsonContent);
 
       Deck = new CardDeck(cardsArray);
+      
     }
     catch (System.Exception ex) {
       Debug.LogError($"Error loading cards from JSON: {ex.Message}");
