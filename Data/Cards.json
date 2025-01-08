@@ -1,9 +1,9 @@
 [
   {
     "Type": "Billionare",
-    "Requirements": [0, 0, 3, 3, 0, 0],
-    "Investors": 0,
-    "Level": 0,
-    "Bonus": ""
+    "Requirements": [0, 0, 3, 3, 3, 0],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
   },
 ]
