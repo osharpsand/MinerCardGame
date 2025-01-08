@@ -6,4 +6,67 @@
     "Level": 4,
     "Bonus": "Money"
   },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 3, 0, 0, 3, 3],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 0, 0, 3, 3, 3],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 3, 3, 3, 0, 0],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 0, 0, 4, 4, 0],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 4, 4, 0, 0, 0],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 0, 4, 4, 0, 0],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 3, 3, 0, 0, 3],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 4, 0, 0, 0, 4],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
+  {
+    "Type": "Billionare",
+    "Requirements": [0, 0, 0, 0, 4, 4],
+    "Investors": 3,
+    "Level": 4,
+    "Bonus": "Money"
+  },
 ]
