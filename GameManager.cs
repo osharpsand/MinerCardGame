@@ -4,12 +4,14 @@ using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
 
-public enum CardType {
+public enum CardType
+{
   Mine,
   Billionare
 }
 
-public enum Currency {
+public enum Currency
+{
   Money, // Wildcard currency
   Iron,
   Copper,
@@ -18,7 +20,8 @@ public enum Currency {
   Gold
 }
 
-public class Card {
+public class Card
+{
 
   public CardType Type;
   public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).length];
@@ -40,19 +43,24 @@ public class Card {
   
 }
 
-class CardDeck : Stack<Card> {
-  public CardDeck(Card[] cards) {
-    foreach (var card in cards) {
+class CardDeck : Stack<Card> 
+{
+  public CardDeck(Card[] cards) 
+  {
+    foreach (var card in cards) 
+    {
       this.Push(card);
     }
   }
 
-  public void Shuffle() {
+  public void Shuffle() 
+  {
     List<Card> cards = new List<Card>(this);
     Random rng = new Random();
     int iteration = Cards.Count;
 
-    while (iteration > 1) {
+    while (iteration > 1) 
+    {
       iteration--;
       int j = rng.next(iteration + 1);
       Card swapping = cards[j];
@@ -61,7 +69,8 @@ class CardDeck : Stack<Card> {
     }
 
     this.Clear();
-    foreach (Card card in cards) {
+    foreach (Card card in cards) 
+    {
       Push(card);
     }
   }
@@ -74,61 +83,63 @@ class gameManager : MonoBehaviour {
   public int players;
   public int playerTurn = 0;
   
-  void Start() {
-    
+  void Start() 
+  {
     Initialize();
-      
   }
 
-  void Update() {
+  void Update() 
+  {
 
   }
 
-  public void Initialize() {
+  public void Initialize() 
+  {
     InitializeCards();
     InitializePlayers();
   }
 
-  public void InitializeCards() {
+  public void InitializeCards() 
+  {
     
     string filePath = Application.dataPath + "/Data/Cards.json";
 
-    if (!File.Exists(filePath)) {
+    if (!File.Exists(filePath)) 
+    {
       Debug.LogError($"JSON file not found at: {filePath}");
       return;
     }
 
-    try {
-
+    try 
+    {
       string jsonContent = File.ReadAllText(filePath);
       Card[] cardsArray = JsonSerializer.Deserialize<Card[]>(jsonContent);
 
       deck = new CardDeck(cardsArray);
-      
     }
-    catch (System.Exception ex) {
+    catch (System.Exception ex) 
+    {
       Debug.LogError($"Error loading cards from JSON: {ex.Message}");
     }
   }
 
-  public void InitializePlayers() {
-
+  public void InitializePlayers() 
+  {
     playerNames = StartScreen.Players;
 
     int playerCount = 0;
 
-    while (true) {
+    while (true) 
+    {
       string playerName = playerNames[playerCount];
       PlayerCount++;
 
-      if (playerName == null) {
+      if (playerName == null) 
+      {
         break;
       }
-      
     }
 
-    players = playerCount;
-    
+    players = playerCount; 
   }
-  
 }
