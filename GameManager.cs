@@ -35,6 +35,7 @@ public class Card {
     Investors = investors;
     Level = isMine ? level : 4;
     Bonus = isMine ? bonus : Currency.Money;
+    
   }
   
 }
@@ -66,18 +67,26 @@ class CardDeck : Stack<Card> {
   }
 }
 
-class GameManager : MonoBehaviour {
+class gameManager : MonoBehaviour {
 
-  public CardDeck Deck;
+  public CardDeck deck;
+  public string[] playerNames;
+  public int players;
+  public int playerTurn = 0;
   
   void Start() {
     
-    InitializeCards();
+    Initialize();
       
   }
 
   void Update() {
 
+  }
+
+  public void Initialize() {
+    InitializeCards();
+    InitializePlayers();
   }
 
   public void InitializeCards() {
@@ -94,12 +103,32 @@ class GameManager : MonoBehaviour {
       string jsonContent = File.ReadAllText(filePath);
       Card[] cardsArray = JsonSerializer.Deserialize<Card[]>(jsonContent);
 
-      Deck = new CardDeck(cardsArray);
+      deck = new CardDeck(cardsArray);
       
     }
     catch (System.Exception ex) {
       Debug.LogError($"Error loading cards from JSON: {ex.Message}");
     }
+  }
+
+  public void InitializePlayers() {
+
+    playerNames = StartScreen.Players;
+
+    int playerCount = 0;
+
+    while (true) {
+      string playerName = playerNames[playerCount];
+      PlayerCount++;
+
+      if (playerName == null) {
+        break;
+      }
+      
+    }
+
+    players = playerCount;
+    
   }
   
 }
