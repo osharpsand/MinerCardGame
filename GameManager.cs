@@ -29,7 +29,7 @@ public class Card
   public int Level;
   public Currency Bonus;
 
-  public Card(CardType type, int[] requirements, int investors, int level, Currency bonus = Currency.Money) {
+  public Card(CardType type, int[] requirements, int investors, int level, Currency bonus) {
 
     private bool isMine = (type == CardType.Mine);
     
