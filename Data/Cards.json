@@ -69,4 +69,144 @@
     "Level": 4,
     "Bonus": "Money"
   },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 7, 0, 0, 0],
+    "Investors": 5,
+    "Level": 3,
+    "Bonus": "Iron"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 7, 0, 0, 0, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Gold"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 0, 3, 5, 3],
+    "Investors": 3,
+    "Level": 3,
+    "Bonus": "Copper"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 5, 3, 3, 0],
+    "Investors": 3,
+    "Level": 3,
+    "Bonus": "Gold"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 6, 3, 0, 0, 3],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Gold"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 3, 6, 3],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Coal"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 0, 0, 3, 6],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Silver"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 3, 7, 0, 0],
+    "Investors": 5,
+    "Level": 3,
+    "Bonus": "Copper"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 7, 0, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Copper"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 5, 3, 3, 0, 3],
+    "Investors": 3,
+    "Level": 3,
+    "Bonus": "Silver"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 3, 5, 3, 3],
+    "Investors": 3,
+    "Level": 3,
+    "Bonus": "Iron"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 0, 3, 7],
+    "Investors": 5,
+    "Level": 3,
+    "Bonus": "Silver"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 0, 0, 7],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Silver"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 3, 6, 3, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Copper"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 3, 7, 0],
+    "Investors": 5,
+    "Level": 3,
+    "Bonus": "Coal"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 0, 0, 7, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Coal"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 0, 7, 0, 0, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Iron"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 7, 0, 0, 0, 3],
+    "Investors": 5,
+    "Level": 3,
+    "Bonus": "Gold"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 6, 3, 0, 0],
+    "Investors": 4,
+    "Level": 3,
+    "Bonus": "Iron"
+  },
+  {
+    "Type": "Mine",
+    "Requirements": [0, 3, 3, 0, 3, 5],
+    "Investors": 3,
+    "Level": 3,
+    "Bonus": ""
+  },
 ]
