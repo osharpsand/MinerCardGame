@@ -22,15 +22,14 @@ public enum Currency
 
 public class Card
 {
-
   public CardType Type;
   public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).length];
   public int Investors;
   public int Level;
   public Currency Bonus;
 
-  public Card(CardType type, int[] requirements, int investors, int level, Currency bonus) {
-
+  public Card(CardType type, int[] requirements, int investors, int level, Currency bonus) 
+  {
     private bool isMine = (type == CardType.Mine);
     
     Type = type;
@@ -38,9 +37,7 @@ public class Card
     Investors = investors;
     Level = isMine ? level : 4;
     Bonus = isMine ? bonus : Currency.Money;
-    
   }
-  
 }
 
 class CardDeck : Stack<Card> 
@@ -76,8 +73,13 @@ class CardDeck : Stack<Card>
   }
 }
 
-class GameManager : MonoBehaviour {
+class Player
+{
+  public Currency[] Tokens = new Currency[Enum.GetValues(typeof(Currency)).length];
+}
 
+class GameManager : MonoBehaviour
+{
   public CardDeck deck;
   public string[] playerNames;
   public int players;
