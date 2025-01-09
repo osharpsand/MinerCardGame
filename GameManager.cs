@@ -120,6 +120,7 @@ class GameManager : MonoBehaviour
 {
   public static CardDeck deck;
   public static List<Player> players;
+  public static Dictionary<Currency, int> tokenPiles;
   
   void Start() 
   {
@@ -135,39 +136,60 @@ class GameManager : MonoBehaviour
   {
     InitializeCards();
     InitializePlayers();
-  }
+    InitializeTokens();
 
-  public void InitializeCards() 
-  {
-    
-    string filePath = Application.dataPath + "/Data/Cards.json";
-
-    if (!File.Exists(filePath)) 
+    void InitializeCards() 
     {
-      Debug.LogError($"JSON file not found at: {filePath}");
-      return;
+      
+      string filePath = Application.dataPath + "/Data/Cards.json";
+
+      if (!File.Exists(filePath)) 
+      {
+        Debug.LogError($"JSON file not found at: {filePath}");
+        return;
+      }
+
+      try 
+      {
+        string jsonContent = File.ReadAllText(filePath);
+        Card[] cardsArray = JsonSerializer.Deserialize<Card[]>(jsonContent);
+
+        deck = new CardDeck(cardsArray);
+      }
+      catch (System.Exception ex) 
+      {
+        Debug.LogError($"Error loading cards from JSON: {ex.Message}");
+      }
     }
 
-    try 
+    void InitializePlayers() 
     {
-      string jsonContent = File.ReadAllText(filePath);
-      Card[] cardsArray = JsonSerializer.Deserialize<Card[]>(jsonContent);
+      string[] playerNames = StartScreen.Players;
 
-      deck = new CardDeck(cardsArray);
+      foreach(string playerName in playerNames)
+      {
+        Player currentPlayer = new Player();
+      }
     }
-    catch (System.Exception ex) 
-    {
-      Debug.LogError($"Error loading cards from JSON: {ex.Message}");
-    }
-  }
 
-  public void InitializePlayers() 
-  {
-    string[] playerNames = StartScreen.Players;
-
-    foreach(string playerName in playerNames)
+    void InitializeTokens()
     {
-      Player currentPlayer = new Player();
+      foreach (Currency currencyType in Enum.GetValues(typeof(Currency)))
+      {
+        int tokenAmount;
+
+        switch (currencyType)
+        {
+          case Currency.Money:
+            tokenAmount = 5;
+            break;
+          default:
+            tokenAmount = 7;
+            break;
+        }
+
+        tokenPiles.Add(currencyType, tokenAmount);
+      }
     }
   }
 }
