@@ -20,10 +20,18 @@ public enum Currency
   Gold
 }
 
+public enum MoveType
+{
+  GrabTokens,
+  BuyMine,
+  ReserveMine,
+  PeekAtTopCard
+}
+
 public class Card
 {
   public CardType Type;
-  public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).Length];
+  public int[] Requirements = new int[6];
   public int Investors;
   public int Level;
   public Currency Bonus;
@@ -88,22 +96,30 @@ class Player
     { Currency.Gold,   0 }
   };
   
+  public int[] CardBonuses = new int[6];
   public List<Card> ReservedMines = new List<Card>();
   public List<Card> OwnedMines    = new List<Card>();
+  public int PlayerId;
   public string PlayerName;
 
   public Player(string PlayerName)
   {
     this.PlayerName = PlayerName;
+    this.PlayerId = PlayerCount;
 
     PlayerCount++;
+  }
+
+  public bool IsTurn()
+  {
+    return (PlayerId == CurrentTurn);
   }
 }
 
 class GameManager : MonoBehaviour
 {
-  public CardDeck deck;
-  public List<Player> players;
+  public static CardDeck deck;
+  public static List<Player> players;
   
   void Start() 
   {
