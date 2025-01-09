@@ -124,13 +124,17 @@ class GameManager : MonoBehaviour
   
   void Start() 
   {
+    //Ititialize The Game
     Initialize();
   }
 
+  /*
+  I'm not sure I will need this
   void Update() 
   {
     
   }
+  */
 
   public void Initialize() 
   {
@@ -178,6 +182,7 @@ class GameManager : MonoBehaviour
       {
         int tokenAmount;
 
+        //There Should Be A Different Amount Of Money Tokens Than The Rest
         switch (currencyType)
         {
           case Currency.Money:
