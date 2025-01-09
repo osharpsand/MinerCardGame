@@ -75,7 +75,7 @@ class CardDeck : Stack<Card>
 
 class Player
 {
-  public static int Players = 0;
+  public static int PlayerCount = 0;
   public static int CurrentTurn = 0;
   
   public Dictionary<Currency, int> Tokens = new Dictionary<Currency, int>
@@ -91,12 +91,19 @@ class Player
   public List<Card> ReservedMines = new List<Card>();
   public List<Card> OwnedMines    = new List<Card>();
   public string PlayerName;
+
+  public Player(string PlayerName)
+  {
+    this.PlayerName = PlayerName;
+
+    PlayerCount++;
+  }
 }
 
 class GameManager : MonoBehaviour
 {
   public CardDeck deck;
-  public Player[] players;
+  public List<Player> players;
   
   void Start() 
   {
@@ -105,7 +112,7 @@ class GameManager : MonoBehaviour
 
   void Update() 
   {
-
+    
   }
 
   public void Initialize() 
@@ -140,6 +147,11 @@ class GameManager : MonoBehaviour
 
   public void InitializePlayers() 
   {
-    playerNames = StartScreen.Players;
+    string[] playerNames = StartScreen.Players;
+
+    foreach(string playerName in playerNames)
+    {
+      Player currentPlayer = new Player();
+    }
   }
 }
