@@ -23,7 +23,7 @@ public enum Currency
 public class Card
 {
   public CardType Type;
-  public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).length];
+  public int[] Requirements = new int[Enum.GetValues(typeof(Currency)).Length];
   public int Investors;
   public int Level;
   public Currency Bonus;
@@ -75,15 +75,28 @@ class CardDeck : Stack<Card>
 
 class Player
 {
-  public Currency[] Tokens = new Currency[Enum.GetValues(typeof(Currency)).length];
+  public static int Players = 0;
+  public static int CurrentTurn = 0;
+  
+  public Dictionary<Currency, int> Tokens = new Dictionary<Currency, int>
+  {
+    { Currency.Money,  0 },
+    { Currency.Iron,   0 },
+    { Currency.Copper, 0 },
+    { Currency.Coal,   0 },
+    { Currency.Silver, 0 },
+    { Currency.Gold,   0 }
+  };
+  
+  public List<Card> ReservedMines = new List<Card>();
+  public List<Card> OwnedMines    = new List<Card>();
+  public string PlayerName;
 }
 
 class GameManager : MonoBehaviour
 {
   public CardDeck deck;
-  public string[] playerNames;
-  public int players;
-  public int playerTurn = 0;
+  public Player[] players;
   
   void Start() 
   {
@@ -128,20 +141,5 @@ class GameManager : MonoBehaviour
   public void InitializePlayers() 
   {
     playerNames = StartScreen.Players;
-
-    int playerCount = 0;
-
-    while (true) 
-    {
-      string playerName = playerNames[playerCount];
-      PlayerCount++;
-
-      if (playerName == null) 
-      {
-        break;
-      }
-    }
-
-    players = playerCount; 
   }
 }
