@@ -48,7 +48,7 @@ public class Card
   }
 }
 
-class CardDeck : Stack<Card> 
+class CardDeck : Stack<Card>
 {
   public CardDeck(Card[] cards) 
   {
