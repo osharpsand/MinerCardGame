@@ -89,9 +89,9 @@ class Player
   public static Player GetActivePlayer()
   {
     return GameManager.players[CurrentTurn];
-  } 
+  }
 
-  public Dictionary<Currency, int> Tokens = new Dictionary<Currency, int>
+  Dictionary<Currency, int> Broke = new Dictionary<Currency, int>
   {
     { Currency.Money,  0 },
     { Currency.Iron,   0 },
@@ -100,8 +100,11 @@ class Player
     { Currency.Silver, 0 },
     { Currency.Gold,   0 }
   };
-  
-  public int[] CardBonuses = new int[6];
+
+  //They don't start with anything
+  public Dictionary<Currency, int> Tokens = Broke;
+  public Dictionary<Currency, int> CardBonuses = Broke;
+
   public List<Card> ReservedMines = new List<Card>();
   public List<Card> OwnedMines    = new List<Card>();
   public int PlayerId;
