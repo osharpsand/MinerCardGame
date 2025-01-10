@@ -9,6 +9,7 @@ public static class Utils
     int amountOfTokensWanted = 0;
     int tokenTypesAvaliable = GetTokenTypesAvaliable().Count;
 
+    //Check If The Tokens Are Avaliable
     foreach (KeyValuePair<Currency, int> tokensOfTypeWanted in tokensWanted)
     {
       Currency tokenWanted = tokensOfTypeWanted.key;
@@ -22,10 +23,7 @@ public static class Utils
       {
         amountOfTokensWanted += amountWanted;
       }
-
     }
-
-    
 
     if (amountOfTokensWanted == 2) 
     {
@@ -48,14 +46,14 @@ public static class Utils
     return false;
   }
 
-  public List<Currency> GetTokenTypesAvaliable()
+  public List<Currency> GetTokenTypesAvaliable(int threshold = 0)
   {
     List<Currency> tokenTypesAvaliable = new List<Currency>();
 
     foreach (KeyValuePair<Currency, int> tokensAvaliable in GameManager.tokenPiles)
     {
       //If There Is Any Tokens Of That Type, Add It To The List;
-      if (tokensAvaliable.value > 0)
+      if (tokensAvaliable.value > threshold)
       {
         tokenTypesAvaliable.Add(tokensAvaliable.key);
       }

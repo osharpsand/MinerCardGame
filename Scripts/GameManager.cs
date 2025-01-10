@@ -85,7 +85,12 @@ class Player
 {
   public static int PlayerCount = 0;
   public static int CurrentTurn = 0;
-  
+
+  public static Player GetActivePlayer()
+  {
+    return GameManager.players[CurrentTurn];
+  } 
+
   public Dictionary<Currency, int> Tokens = new Dictionary<Currency, int>
   {
     { Currency.Money,  0 },
@@ -108,11 +113,6 @@ class Player
     this.PlayerId = PlayerCount;
 
     PlayerCount++;
-  }
-
-  public bool IsTurn()
-  {
-    return (PlayerId == CurrentTurn);
   }
 }
 
@@ -196,5 +196,10 @@ class GameManager : MonoBehaviour
         tokenPiles.Add(currencyType, tokenAmount);
       }
     }
+  }
+
+  public void MakeMove(MoveType Move)
+  {
+
   }
 }
